@@ -1,0 +1,5 @@
+{
+  "python.analysis.extraPaths": [
+    "./Members/lhtan2537-cell/W2"
+  ]
+}
