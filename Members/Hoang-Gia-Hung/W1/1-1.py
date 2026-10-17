@@ -2,30 +2,24 @@ import statistics
 
 
 def summary(scores: list[float]) -> dict:
-    """Summarize a list of student exam scores.
+    """W1-1: Grade summary.
 
-    Computes the minimum, maximum, mean (rounded to 2 decimal places),
-    and median (rounded to 2 decimal places).
-    Raises ValueError if scores list is empty.
+    Returns {"min": ..., "max": ..., "mean": ..., "median": ...}.
+    Rounds mean and median to 2 decimals.
+    Raises ValueError on empty list.
     """
     if not scores:
-        raise ValueError("The scores list cannot be empty.")
+        raise ValueError("Scores list cannot be empty.")
 
     sorted_scores = sorted(scores)
-    min_score = min(sorted_scores)
-    max_score = max(sorted_scores)
-    mean_score = round(statistics.mean(sorted_scores), 2)
-    median_score = round(statistics.median(sorted_scores), 2)
-
     return {
-        "min": min_score,
-        "max": max_score,
-        "mean": mean_score,
-        "median": median_score,
+        "min": min(sorted_scores),
+        "max": max(sorted_scores),
+        "mean": round(statistics.mean(sorted_scores), 2),
+        "median": round(statistics.median(sorted_scores), 2),
     }
 
 
 if __name__ == "__main__":
-    test_scores = [7.5, 9.0, 6.0, 8.0]
-    print("Scores:", test_scores)
-    print("Summary:", summary(test_scores))
+    print(summary([7.5, 9, 6, 8]))
+    # Expected: {'min': 6, 'max': 9, 'mean': 7.62, 'median': 7.75}
