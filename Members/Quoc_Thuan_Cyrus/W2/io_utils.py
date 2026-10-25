@@ -1,8 +1,7 @@
 import csv
 import json
 from datetime import datetime
-from models import Task # Assuming Task is saved in models.py from the previous step
-
+from Members.Quoc_Thuan_Cyrus.W2.models import Task
 def load_tasks(path: str) -> list[Task]:
     tasks = []
     with open(path, mode='r', encoding='utf-8') as f:
