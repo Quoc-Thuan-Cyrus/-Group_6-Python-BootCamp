@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 
+
 def word_count(text: str) -> dict[str, int]:
     cleaned_text = re.sub(r'[.,!?;:]', '', text.lower())
     words = cleaned_text.split()

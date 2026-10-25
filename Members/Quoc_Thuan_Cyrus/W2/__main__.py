@@ -1,5 +1,7 @@
 import sys
+
 from .io_utils import load_tasks
+
 
 def main():
     # Define the path to your sample CSV file
@@ -18,7 +20,7 @@ def main():
             print(task)
     except FileNotFoundError:
         print(f"Error: Could not find the file '{csv_path}'")
-    except Exception as e:
+    except ValueError as e:
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":

@@ -4,8 +4,8 @@ def by_day(timetable):
         result.setdefault(day, []).append(course)
     
     # Sắp xếp danh sách môn học cho từng ngày
-    for day in result:
-        result[day].sort()
+    for day, value in result.items():
+        value.sort()
         
     return result
 

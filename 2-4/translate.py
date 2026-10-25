@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 # Task 1
 def binary_search(arr: list[int], target: int) -> int:
     """Binary search on a sorted vector/list, returning the target index or -1 if not found.

@@ -1,8 +1,8 @@
-from typing import List
+
 from shared.contract import Block
 
 
-def render(blocks: List[Block]) -> str:
+def render(blocks: list[Block]) -> str:
     """
     Renders a list of study blocks into a readable text plan.
     """
