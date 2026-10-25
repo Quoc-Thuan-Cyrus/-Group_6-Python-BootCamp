@@ -1,13 +1,13 @@
-import pytest
 from translate import (
     binary_search,
-    insertion_sort,
-    transpose_matrix,
-    sieve_of_eratosthenes,
     get_frequencies,
+    insertion_sort,
     merge_sorted_arrays,
-    reverse_words
+    reverse_words,
+    sieve_of_eratosthenes,
+    transpose_matrix,
 )
+
 
 # --- Task 1: Binary Search Tests ---
 def test_binary_search_middle():

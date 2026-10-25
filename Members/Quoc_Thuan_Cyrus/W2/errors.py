@@ -1,4 +1,5 @@
-from models import Task # Assuming Task is imported from models.py
+from models import Task  # Assuming Task is imported from models.py
+
 
 class InfeasiblePlan(Exception):
     def __init__(self, needed_h: float, available_h: float):

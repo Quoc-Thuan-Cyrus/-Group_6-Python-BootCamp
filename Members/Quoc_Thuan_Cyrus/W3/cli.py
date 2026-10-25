@@ -1,13 +1,14 @@
 import argparse
-import sys
 import os
+import sys
 from datetime import date, datetime
 
 # Adjust these imports based on your actual W2 module structure
 from Members.Quoc_Thuan_Cyrus.W2.io_utils import load_tasks
-from shared.study_planner.prioritise import prioritise
 from shared.study_planner.allocate import allocate
+from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
+
 
 def main():
     parser = argparse.ArgumentParser(description="Study Planner CLI")
@@ -37,7 +38,7 @@ def main():
         output = render(blocks)
         print(f"Tonight ({args.hours:.1f} h):")
         print(output)
-    except Exception as e:
+    except ValueError as e:
         print(f"Error processing tasks: {e}", file=sys.stderr)
         sys.exit(1)
 
