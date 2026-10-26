@@ -1,32 +1,22 @@
+from collections import Counter
 
 
-#task 2
-def insertion_sort(arr):
+def count_frequencies(elements: list) -> dict:
+    """Đếm tần suất xuất hiện của các phần tử trong danh sách.
+
+    Sự khác biệt so với C++ (std::map / std::unordered_map):
+    - Trong C++, việc đếm tần suất đòi hỏi duyệt thủ công qua từng phần tử
+      và chèn/cập nhật vào std::map (cây đỏ-đen, O(log N)) hoặc
+      std::unordered_map (bảng băm, O(1) trung bình) thông qua toán tử []
+      hoặc find()/insert().
+    - Trong Python, collections.Counter cho phép đếm toàn bộ tần suất ngay khi
+      khởi tạo (one-liner) với độ phức tạp O(N). Nếu dùng dict thông thường,
+      phương thức .get(key, 0) cũng hỗ trợ lấy giá trị mặc định ngắn gọn và an toàn.
     """
-    Sorts a list in-place using the insertion sort algorithm and returns it.
-    
-    Difference from C++:
-    In Python, we do not need to pass the size of the array as a separate 
-    parameter (like `int n` in C++) because Python lists inherently know 
-    their own length, which can be accessed using `len(arr)`. Additionally, 
-    due to Python's dynamic typing, this single function can sort lists of 
-    integers, floats, or strings without needing templates or function overloading.
-    """
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        
-        # Move elements of arr[0..i-1] that are greater than key, 
-        # to one position ahead of their current position
-        while j >= 0 and arr[j] > key:
-            arr[j + 1] = arr[j]
-            j -= 1
-            
-        arr[j + 1] = key
-        
-    return arr
+    return dict(Counter(elements))
 
-# Example usage:
-# my_list = [12, 11, 13, 5, 6]
-# sorted_list = insertion_sort(my_list)
-# print(sorted_list)  # Output: [5, 6, 11, 12, 13]
+
+if __name__ == "__main__":
+    sample_data = ["apple", "banana", "apple", "orange", "banana", "apple"]
+    result = count_frequencies(sample_data)
+    print("Ket qua:", result)
